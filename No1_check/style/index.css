@@ -130,7 +130,7 @@
     display: none;
 }
 .starability-basic label {
-    background-image: url('/img/211824_star_icon.png'); /* 기본 별 이미지 */
+    background-image: url('../img/211824_star_icon.png'); /* 기본 별 이미지 */
     background-size: cover;
     width: 40px; /* 별 이미지 너비 */
     height: 40px; /* 별 이미지 높이 */
@@ -143,7 +143,7 @@
 }
 
 .starability-basic input[type="radio"]:checked ~ label {
-    background-image: url('/img/211823_star_icon.png');/* 클릭시 별 이미지*/
+    background-image: url('../img/211823_star_icon.png');/* 클릭시 별 이미지*/
     background-position: right center;
 }
 /*======================================= 모달&팝업 스타일 */
