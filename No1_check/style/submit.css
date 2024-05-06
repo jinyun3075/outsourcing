@@ -37,7 +37,7 @@ h1 {
     box-sizing: border-box;
 }
 .additional-input input[type="text"] {
-    width: calc(100% - 40px);
+    width: calc(98% - 40px);
     margin-top: 5px;
     padding: 8px;
     border: 1px solid #ccc;
