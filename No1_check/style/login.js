@@ -8,17 +8,17 @@ const signUpOverlay = document.getElementById('sign-up-overlay');
 const signInOverlay = document.getElementById('sign-in-overlay');
 
 signInButton.addEventListener('click', () => {
-    signUpContainer.classList.add('on');
+    signInContainer.classList.add('on');
     signUpOverlay.classList.add('on');
     
-    signInContainer.classList.remove('on');
+    signUpContainer.classList.remove('on');
     signInOverlay.classList.remove('on');
 });
 
 signUpButton.addEventListener('click', () => {
-    signInContainer.classList.add('on');
     signInOverlay.classList.add('on');
-
-    signUpContainer.classList.remove('on');
+    signUpContainer.classList.add('on');
+    
+    signInContainer.classList.remove('on');
     signUpOverlay.classList.remove('on');
 });

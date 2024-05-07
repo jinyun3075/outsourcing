@@ -122,22 +122,3 @@ body {
     border: 1px solid #fff;
     color: #fff;
 }
-
-/* 나머지 CSS 코드 */
-
-.input-container {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.input-icon {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: #aaa;
-}
-
-.input-icon i {
-    font-size: 18px;
-}
