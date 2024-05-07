@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 및 회원가입 페이지</title>
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container on" id="sign-in-container">
+            <form action="#">
+                <h1>로그인</h1>
+                <div class="input-container">
+                    <input type="email" placeholder="이메일" required>
+                    <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="비밀번호" required>
+                    <span class="input-icon"><i class="fas fa-lock"></i></span>
+                </div>
+                <button>로그인</button>
+            </form>
+        </div>
+        <div class="form-container" id="sign-up-container">
+            <form action="#">
+                <h1>회원가입</h1>
+                <div class="input-container">
+                    <input type="text" placeholder="이름" required>
+                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                </div>
+                <div class="input-container">
+                    <input type="email" placeholder="이메일" required>
+                    <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="비밀번호" required>
+                    <span class="input-icon"><i class="fas fa-lock"></i></span>
+                </div>
+                <button>회원가입</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel on" id="sign-in-overlay">
+                    <h1>환영합니다!</h1>
+                    <p>계정이 있으시면 로그인해주세요.</p>
+                    <button class="ghost" id="signIn">로그인</button>
+                </div>
+                <div class="overlay-panel" id="sign-up-overlay">
+                    <h1>안녕하세요!</h1>
+                    <p>계정이 없으시다면 회원가입을 해주세요.</p>
+                    <button class="ghost" id="signUp">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../style/login.js"></script>
+</body>
+</html>

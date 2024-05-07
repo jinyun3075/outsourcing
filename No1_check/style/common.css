@@ -5,6 +5,13 @@ body {
 }
 
 /* ======================================= 헤더 탭 메뉴 스타일 */
+.userInfo{
+    width: 100%;
+    text-align: right;
+}
+.userInfo img {
+    width: 2%;
+}
 header {
     border: 1px solid #0f0202;
     color: white;
@@ -16,7 +23,9 @@ header {
 }
 .logo {
     width: 100px;
-    
+}
+.logo img {
+    width: 60%;
 }
 nav {
     display: flex;
