@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/survey.css">
+</head>
+<body>
+    <div class="userInfo">
+        <!-- 미 로그인 시 -->
+        <!-- <span>회원가입/로그인</span> -->
+        <!-- 로그인 시 -->
+        <img src="../img/8666609_user_icon.PNG" alt="로고 이미지"> <!-- 이미지 넣어주세요 -->
+    </div>
+    <header>
+        <div class="logo">
+            <img src="../img/IMG_2369.PNG" alt="로고 이미지"> <!-- 이미지 넣어주세요 -->
+        </div>
+        <nav>
+            <a href="#" class="tab1">요양 서비스 신청</a>
+        <div class="dropdown"> <!-- 드롭다운 메뉴 -->
+            <a href="#" class="tab1" id="support-tab">요양보호 지원</a>
+            <div class="dropdown-content">
+                <a href="../page/submit.html">지원서 작성</a>
+                <a href="#">자격인증 신청</a>
+            </div>
+        </div>
+        <a href="#" class="tab1">자료실</a>
+        </nav>
+    </header>
+    <div id="container">
+        <div class="topWrap">
+            <div>
+                <h2>장기요양등급 예측</h2>
+            </div>
+        </div>
+        <div class="partWrap">
+            <div >
+                <ol id="tabMenu">
+                    <li class="active"><span >신체 기능</span></li>
+                    <li><span >인지 기능</span></li>
+                    <li><span >행동 변화</span></li>
+                    <li><span >간호처치</span></li>
+                    <li><span >재활</span></li>
+                </ol>
+            </div>
+        </div>
+        <form id="surveyForm" th:action="@{/survey}" method="post">
+            <div id="tabContent">
+                <div class="checklistWrap">
+                    <div >
+                        <div class="title_wrap">
+                            <h3 >신체(기본적 일상생활 기능)영역</h3>
+                            <p>각 문항에서 세 가지 항목 중 자신에게 가까운 응답을 한 가지씩 골라주세요.</p>
+                        </div>
+                        <div class="list_wrap">
+                            <p>최근 한 달간의 상황을 종합하여 일상생활에서 다음과 같은 동작을 할 때 다른 사람의 도움을 받는 정도를 평가하여 문항에 답해주세요. (총 10문항)</p>
+                            <ol>
+                                <li>
+                                    <p><span class="num">01.</span>옷 벗고 입기가 가능하십니까?</p>
+                                    <div>
+                                        <label class="custm"><input name="A1" type="radio" value="1"><span>혼자 가능</span></label>
+                                        <label class="custm"><input name="A1" type="radio" value="2"><span>부분 도움이 필요</span></label>
+                                        <label class="custm"><input name="A1" type="radio" value="3"><span>완전 도움이 필요</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="num">02.</span>세수하기가 가능하십니까?</p>
+                                    <div>
+                                        <label class="custm"><input name="A2" type="radio" value="1"><span>혼자 가능</span></label>
+                                        <label class="custm"><input name="A2" type="radio" value="2"><span>부분 도움이 필요</span></label>
+                                        <label class="custm"><input name="A2" type="radio" value="3"><span>완전 도움이 필요</span></label>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="checklistWrap hidden">
+                    <div >
+                        <div class="title_wrap">
+                            <h3 >인지 기능 영역</h3>
+                            <p>각 문항에서 세 가지 항목 중 자신에게 가까운 응답을 한 가지씩 골라주세요.</p>
+                        </div>
+                        <div class="list_wrap">
+                            <p>최근 한 달간의 상황을 종합하여 인지 기능을 평가해주세요. (총 @문항)</p>
+                            <ol >
+                                <li>
+                                    <p><span class="num">01.</span>인지 기능 질문 1</p>
+                                    <div>
+                                        <label class="custm"><input name="B1" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="B1" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="B1" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="num">02.</span>인지 기능 질문 2</p>
+                                    <div>
+                                        <label class="custm"><input name="B2" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="B2" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="B2" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="checklistWrap hidden">
+                    <div >
+                        <div class="title_wrap">
+                            <h3 >행동 변화</h3>
+                            <p>각 문항에서 세 가지 항목 중 자신에게 가까운 응답을 한 가지씩 골라주세요.</p>
+                        </div>
+                        <div class="list_wrap">
+                            <p>최근 한 달간의 상황을 종합하여 행동 변화를 평가해주세요. (총 @문항)</p>
+                            <ol >
+                                <li>
+                                    <p><span class="num">01.</span>행동 변화 질문 1</p>
+                                    <div>
+                                        <label class="custm"><input name="C1" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="C1" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="C1" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="num">01.</span>행동 변화 질문 2</p>
+                                    <div>
+                                        <label class="custm"><input name="C2" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="C2" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="C2" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="checklistWrap hidden">
+                    <div >
+                        <div class="title_wrap">
+                            <h3 >간호처지 영역</h3>
+                            <p>각 문항에서 세 가지 항목 중 자신에게 가까운 응답을 한 가지씩 골라주세요.</p>
+                        </div>
+                        <div class="list_wrap">
+                            <p>최근 한 달간의 상황을 종합하여 간호처지 영역을 평가해주세요. (총 @문항)</p>
+                            <ol >
+                                <li>
+                                    <p><span class="num">01.</span>간호처지 질문 1</p>
+                                    <div>
+                                        <label class="custm"><input name="D1" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="D1" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="D1" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="num">02.</span>간호처지 질문 2</p>
+                                    <div>
+                                        <label class="custm"><input name="D2" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="D2" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="D2" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="checklistWrap hidden">
+                    <div >
+                        <div class="title_wrap">
+                            <h3 >재활 영역</h3>
+                            <p>각 문항에서 세 가지 항목 중 자신에게 가까운 응답을 한 가지씩 골라주세요.</p>
+                        </div>
+                        <div class="list_wrap">
+                            <p>최근 한 달간의 상황을 종합하여 재활을 평가해주세요. (총 @문항)</p>
+                            <ol >
+                                <li>
+                                    <p><span class="num">01.</span>재활 영역 질문1</p>
+                                    <div>
+                                        <label class="custm"><input name="E1" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="E1" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="E1" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p><span class="num">02.</span>재활 영역 질문 2</p>
+                                    <div>
+                                        <label class="custm"><input name="E2" type="radio" value="1"><span>응답 1</span></label>
+                                        <label class="custm"><input name="E2" type="radio" value="2"><span>응답 2</span></label>
+                                        <label class="custm"><input name="E2" type="radio" value="3"><span>응답 3</span></label>
+                                    </div>
+                                </li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btnWrap multi mt60">
+                <button type="button" class="btn gray" onclick="prevTab();">이전</button>
+                <button type="button" class="btn pink" onclick="nextTab();">다음</button>
+                <button type="submit" class="btn pink hidden" id="submitBtn" onclick="submitForm()">제출</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="../js/survey.js"></script>
+</body>
+</html>

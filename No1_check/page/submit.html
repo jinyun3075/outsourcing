@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/submit.css">
-    <script type="text/javascript" src="../style/submit.js"></script>
+    <script type="text/javascript" src="../js/submit.js"></script>
     <title>지원서 작성 페이지</title>
 </head>
 <body>
@@ -13,15 +11,15 @@
         <!-- 미 로그인 시 -->
         <!-- <span>회원가입/로그인</span> -->
         <!-- 로그인 시 -->
-        <img src="../img/8666609_user_icon.PNG" alt="로고 이미지"> <!-- 이미지 넣어주세요 -->
+        <img src="../img/8666609_user_icon.PNG" alt="상태 이미지">
     </div>
     <header>
         <div class="logo">
-            <img src="../img/IMG_2369.PNG" alt="로고 이미지"> <!-- 이미지 넣어주세요 -->
+            <img src="../img/IMG_2369.PNG" alt="로고 이미지">
         </div>
         <nav>
             <a href="#" class="tab1">요양 서비스 신청</a>
-        <div class="dropdown"> <!-- 드롭다운 메뉴 -->
+        <div class="dropdown">
             <a href="#" class="tab1" id="support-tab">요양보호 지원</a>
             <div class="dropdown-content">
                 <a href="../page/submit.html">지원서 작성</a>
@@ -31,34 +29,36 @@
         <a href="#" class="tab1">자료실</a>
         </nav>
     </header>
-    <div class="container">
-        <h3>김O주</h3>
-        <div class="category-container">
-            <div class="category"><img src="../img/290109_award_prize_trophy_win_winner_icon.png"/> 대표 경력</div>
-            <div class="add-more" data-category="experience">+추가</div>
-        </div>
-        <div class="additional-input experience-additional form-group"></div>
+    <form th:action="@{/submit}" th:object="${request}" method="post">
+        <div class="container">
+            <h3 th:text="${username}"></h3>
+            <div class="category-container">
+                <div class="category"><img src="../img/290109_award_prize_trophy_win_winner_icon.png"/> 대표 경력</div>
+                <div class="add-more" data-category="experience">+추가</div>
+            </div>
+            <div class="additional-input experience-additional form-group"></div>
 
-        <div class="category-container">
-            <div class="category"><img src="../img/7067482_briefcase_bag_minimalis_icon.png"/> 전문 부야</div>
-            <div class="add-more" data-category="expertise">+추가</div>
-        </div>
-        <div class="additional-input expertise-additional form-group"></div>
+            <div class="category-container">
+                <div class="category"><img src="../img/7067482_briefcase_bag_minimalis_icon.png"/> 전문 부야</div>
+                <div class="add-more" data-category="expertise">+추가</div>
+            </div>
+            <div class="additional-input expertise-additional form-group"></div>
 
-        <div class="category-container">
-            <div class="category"><img src="../img/2703072_maker_map_marker_icon.png"/> 방문 지역</div>
-            <div class="add-more" data-category="location">+추가</div>
-        </div>
-        <div class="additional-input location-additional form-group"></div>
+            <div class="category-container">
+                <div class="category"><img src="../img/2703072_maker_map_marker_icon.png"/> 방문 지역</div>
+                <div class="add-more" data-category="location">+추가</div>
+            </div>
+            <div class="additional-input location-additional form-group"></div>
 
-        <div class="category-container">
-            <div class="category">경력·자격</div>
-            <div class="add-more" data-category="qualification">+추가</div>
-        </div>
-        <div class="additional-input qualification-additional form-group"></div>
+            <div class="category-container">
+                <div class="category">경력·자격</div>
+                <div class="add-more" data-category="qualification">+추가</div>
+            </div>
+            <div class="additional-input qualification-additional form-group"></div>
 
-        <button type="submit" class="btn-submit" onclick="openNotificationModal()">작성 완료</button>
-    </div>
+            <button type="submit" class="btn-submit" onclick="openNotificationModal()">작성 완료</button>
+        </div>
+    </form>
 
     <!-- 모달 -->
     <div id="notificationModal" class="modal">
