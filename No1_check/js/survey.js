@@ -75,7 +75,6 @@ function submitForm() {
 function validateTab(index) {
     const currentTabInputs = document.querySelectorAll(`#tabContent > div:nth-child(${index + 1}) input`);
     return Array.from(currentTabInputs).some(input => input.checked);
-    return true
 }
 
 document.addEventListener("DOMContentLoaded", function() {
