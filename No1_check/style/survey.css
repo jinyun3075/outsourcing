@@ -97,3 +97,63 @@
 .hidden {
     display: none;
 }
+
+.result_box {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result_box dl {
+    margin: 0;
+    padding: 0;
+}
+
+.result_box dt {
+    font-weight: bold;
+}
+
+.result_box dd {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 10px;
+}
+
+.result_box .inner {
+    padding: 10px 0;
+}
+
+.result_box .txt01, .result_box .txt02 {
+    margin-bottom: 10px;
+}
+
+.result_box .txt01 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.result_box .txt02 {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.result_box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result_box ul li {
+    margin-bottom: 10px;
+}
+
+.result_box ul li dl dt {
+    margin-bottom: 5px;
+}
+
+.result_box ul li dl dd {
+    margin-left: 20px;
+}
