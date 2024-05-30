@@ -166,7 +166,7 @@
                             <ol >
                                 <li>
                                     <div>
-                                        <label class="custm"><input name="B1" type="radio" value="1"><span>해당하는 증상이 없다.</span></label>
+                                        <label class="custm"><input name="B1" type="radio" value="0"><span>해당하는 증상이 없다.</span></label>
                                     </div>
                                 </li>
                                 <li>
@@ -220,7 +220,7 @@
                             <ol >
                                 <li>
                                     <div>
-                                        <label class="custm"><input name="C1" type="radio" value="1"><span>해당하는 증상이 없다.</span></label>
+                                        <label class="custm"><input name="C1" type="radio" value="0"><span>해당하는 증상이 없다.</span></label>
                                     </div>
                                 </li>
                                 <li>
@@ -309,7 +309,7 @@
                             <ol >
                                 <li>
                                     <div>
-                                        <label class="custm"><input name="D1" type="radio" value="1"><span>해당하는 증상이 없다.</span></label>
+                                        <label class="custm"><input name="D1" type="radio" value="0"><span>해당하는 증상이 없다.</span></label>
                                     </div>
                                 </li>
                                 <li>
@@ -455,10 +455,139 @@
                     </div>
                 </div>
             </div>
+            <div class="result_box hidden">
+                <dl>
+                    <dt>점수</dt>
+                    <dd id="rs_score"></dd>
+                    <dt>등급</dt>
+                    <dd id="rs_level"></dd>
+                </dl>
+                <div class="inner hidden" id="level1">
+                    <p class="txt01">시설급여, 재가급여, <i class="mbr"></i>치매가족휴가제(종일 방문요양), <i class="mbr"></i>특별현금급여(가족요양비),<br>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>재가급여</dt>
+                                <dd>장기요양요원의 방문요양, 주·야간보호, 방문목욕, 방문간호, 단기보호(9일 이내), 복지용구를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>시설급여</dt>
+                                <dd>요양원(입소정원 10명 이상), 노인요양공동 생활가정(입소정원 5~9명) 입소를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>특별현금급여<i class="pbr"></i>(가족요양비)</dt>
+                                <dd>장기요양급여 수급자가 가족 등으로부터 방문요양에 상당하는 장기요양급여 서비스를 받은 경우, 당해 수급자에게 월 15만 원의 가족요양비를 지원합니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt> 치매가족휴가제</dt>
+                                <dd>치매가 있는 수급자를 돌보는 가족이 일시적으로 휴일이 필요한 경우, 월 한도액과 관계없이 1년에 8일 이내로 단기보호 또는 종일 방문요양을 이용할 수 있습니다. <br>(단, 종일 방문요양은 1~2등급 치매 수급자만 이용 가능합니다. *1회당 12시간)</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+
+                <div class="inner hidden" id="level2">
+                    <p class="txt01">시설급여, 재가급여, <i class="mbr"></i>치매가족휴가제(종일 방문요양), <i class="mbr"></i>특별현금급여(가족요양비),<br>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>재가급여</dt>
+                                <dd>장기요양요원의 방문요양, 주·야간보호, 방문목욕, 방문간호, 단기보호(9일 이내), 복지용구를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>시설급여</dt>
+                                <dd>요양원(입소정원 10명 이상), 노인요양공동 생활가정(입소정원 5~9명) 입소를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>특별현금급여<i class="pbr"></i>(가족요양비)</dt>
+                                <dd>장기요양급여 수급자가 가족 등으로부터 방문요양에 상당하는 장기요양급여 서비스를 받은 경우, 당해 수급자에게 월 15만 원의 가족요양비를 지원합니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt> 치매가족휴가제</dt>
+                                <dd>치매가 있는 수급자를 돌보는 가족이 일시적으로 휴일이 필요한 경우, 월 한도액과 관계없이 1년에 8일 이내로 단기보호 또는 종일 방문요양을 이용할 수 있습니다. <br>(단, 종일 방문요양은 1~2등급 치매 수급자만 이용 가능합니다. *1회당 12시간)</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+
+                <div class="inner hidden" id="level3">
+                    <p class="txt01">재가급여, <i class="mbr"></i>특별현금급여(가족요양비), <i class="mbr"></i>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>재가급여</dt>
+                                        <dd>장기요양요원의 방문요양, 주·야간보호, 방문목욕, 방문간호, 단기보호(9일 이내), 복지용구를 지원받을 수 있습니다.</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>특별현금급여<i class="pbr"></i>(가족요양비)</dt>
+                                        <dd>장기요양급여 수급자가 가족 등으로부터 방문요양에 상당하는 장기요양급여 서비스를 받은 경우, 당해 수급자에게 월 15만 원의 가족요양비를 지원합니다.</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                            <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+                <div class="inner hidden" id="level4">
+                    <p class="txt01">재가급여, <i class="mbr"></i>특별현금급여(가족요양비), <i class="mbr"></i>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>재가급여</dt>
+                                <dd>장기요양요원의 방문요양, 주·야간보호, 방문목욕, 방문간호, 단기보호(9일 이내), 복지용구를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>특별현금급여<i class="pbr"></i>(가족요양비)</dt>
+                                <dd>장기요양급여 수급자가 가족 등으로부터 방문요양에 상당하는 장기요양급여 서비스를 받은 경우, 당해 수급자에게 월 15만 원의 가족요양비를 지원합니다.</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+                <div class="inner hidden" id="level5">
+                    <p class="txt01">재가급여, <i class="mbr"></i>특별현금급여(가족요양비), <i class="mbr"></i>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>재가급여</dt>
+                                <dd>장기요양요원의 방문요양, 주·야간보호, 방문목욕, 방문간호, 단기보호(9일 이내), 복지용구를 지원받을 수 있습니다.</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>특별현금급여<i class="pbr"></i>(가족요양비)</dt>
+                                <dd>장기요양급여 수급자가 가족 등으로부터 방문요양에 상당하는 장기요양급여 서비스를 받은 경우, 당해 수급자에게 월 15만 원의 가족요양비를 지원합니다.</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+
+                <div class="inner hidden" id="level6">
+                    <p class="txt01">주·야간 보호급여, <i class="mbr"></i>기타 재가급여(복지용구)를 <i class="mbr"></i>이용할 수 있습니다.</p>
+                    <p class="txt02">급여 종류 / 내용 변경 신청에 대한 문의는 <i class="mbr"></i>국민건강보험공단에 가능합니다. (1577-1000) <br>신청 시 사실확인서, 치매진단서 등 신청 사유에 <i class="mbr"></i>해당하는 입증서류를 제출해야 합니다.</p>
+                </div>
+            </div>
             <div class="btnWrap multi mt60">
                 <button type="button" class="btn gray" onclick="prevTab();">이전</button>
                 <button type="button" class="btn pink" onclick="nextTab();">다음</button>
-                <button type="submit" class="btn pink hidden" id="submitBtn" onclick="submitForm()">제출</button>
+                <button type="button" class="btn pink hidden" id="submitBtn" onclick="submitForm();">제출</button>
             </div>
         </form>
     </div>
