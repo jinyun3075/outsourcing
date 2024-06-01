@@ -4,6 +4,62 @@
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/notice.css">
     <title>자료실 페이지</title>
+    <style>
+        .gallery_bbs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .gallery_bbs .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: contents;
+        }
+        .gallery_bbs li {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .gallery_bbs .thumb img {
+            width: 100%;
+            height: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay-content {
+            width: 75%;
+            height: 75%;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .overlay iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .overlay-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="userInfo">
@@ -40,25 +96,200 @@
                 </button>
             </div>
         </form>
-        
-        <table id="list-container">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>제목</th>
-                    <th>작성일</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 타임리프 예 -->
-                <tr th:each="obj : ${list}">
-                    <td th:text="${obj.num}">1</td>
-                    <td><a th:href="${obj.link}" th:text="${obj.title}">자료 제목 1</a></td>
-                    <td th:text="${obj.date}">2024-05-10</td>
-                </tr>
-            </tbody>
-        </table>
-        
+
+        <div class="gallery_bbs">								
+            <ul class="list">
+                <!--
+                    타임리프는 요거로 쓰시면 됩니다. 
+                    <li scope="row" th:each="video : ${videos}">
+                    <dl>
+                        <dt>
+                            <p class="thumb">
+                                <a href="#" title="영상보기" class="pop" th:attr="data-video-id=${video.videoId}">
+                                    <span class="ic_youtube"></span>
+                                    <img th:src="@{http://img.youtube.com/vi/{video.videoId}/mqdefault.jpg(video.videoId=${video.videoId})}" th:alt="${video.title}" />
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data" th:text="${video.date}"></p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" th:attr="data-video-id=${video.videoId}">
+                                    <span th:text="${video.title}"></span>
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li> -->
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="DmbiyCSEC_8">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/DmbiyCSEC_8/mqdefault.jpg" alt="아마겟돈"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="DmbiyCSEC_8">
+                                    에스파 아마겟돈
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="phuiiNCxRMg">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/phuiiNCxRMg/mqdefault.jpg" alt="슈퍼노바뮤비"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="phuiiNCxRMg">
+                                    에스파 슈퍼노바 뮤비
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="t5Vj0jeYeEE">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/t5Vj0jeYeEE/mqdefault.jpg" alt="슈퍼노바라이브"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="t5Vj0jeYeEE">
+                                    슈퍼노바 라이브
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="nFYwcndNuOY">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/nFYwcndNuOY/mqdefault.jpg" alt="아마겟돈 뮤비"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="nFYwcndNuOY">
+                                    에스파 아마겟돈 뮤비
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="DmbiyCSEC_8">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/DmbiyCSEC_8/mqdefault.jpg" alt="아마겟돈"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="DmbiyCSEC_8">
+                                    에스파 아마겟돈
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="phuiiNCxRMg">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/phuiiNCxRMg/mqdefault.jpg" alt="슈퍼노바뮤비"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="phuiiNCxRMg">
+                                    에스파 슈퍼노바 뮤비
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="t5Vj0jeYeEE">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/t5Vj0jeYeEE/mqdefault.jpg" alt="슈퍼노바라이브"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="t5Vj0jeYeEE">
+                                    슈퍼노바 라이브
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <li scope="row">
+                    <dl>
+                        <dt>
+                            <p class="thumb"> 
+                                <a href="#" title="영상보기" class="pop" data-video-id="nFYwcndNuOY">
+                                    <span class="ic_youtube"></span>
+                                    <img src="http://img.youtube.com/vi/nFYwcndNuOY/mqdefault.jpg" alt="아마겟돈 뮤비"/>
+                                </a>
+                            </p>
+                        </dt>
+                        <dd>
+                            <p class="data">2023-10-18</p>
+                            <h3>
+                                <a href="#" title="영상보기" class="pop" data-video-id="nFYwcndNuOY">
+                                    에스파 아마겟돈 뮤비
+                                </a>
+                            </h3>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 더 많은 비디오 항목들 추가 가능 -->
+            </ul>
+        </div>
+        <div class="overlay" id="videoOverlay">
+            <button class="overlay-close" id="closeButton">&times;</button>
+            <div class="overlay-content">
+                <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="overlayVideo"></iframe>
+            </div>
+        </div>
         
         <ul class="pagination">
             <li><a href="#">&laquo;</a></li>
@@ -70,5 +301,35 @@
             <li><a href="#">&raquo;</a></li>
         </ul>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoLinks = document.querySelectorAll('.pop');
+            const overlay = document.getElementById('videoOverlay');
+            const overlayVideo = document.getElementById('overlayVideo');
+            const closeButton = document.getElementById('closeButton');
+
+            videoLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const videoId = this.getAttribute('data-video-id');
+                    const src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    overlayVideo.src = src;
+                    overlay.style.display = 'flex';
+                });
+            });
+
+            closeButton.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                overlayVideo.src = '';
+            });
+
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                    overlayVideo.src = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
