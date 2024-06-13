@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="/js/common.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+<body style="background: rgb(255, 255, 255);">
+    <div class="gnb" style="position: relative">
+        <div class="gnb_top_wrap">
+            <div class="gnb_top">
+                <h1>
+                    <a href="home.html"><img src="../img/logo.png" alt="로고" style="width: 50px;height: 50px;"></a>
+                </h1>
+                <div class="gnb_search">
+                    <div class="input-group">
+                        <input id="srhRecipeText" name="q" type="text" class="form-control ui-autocomplete-input"
+                            placeholder="" value="" style="ime-mode:active;" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="searchHome()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <ul class="gnb_right">
+                    <li style="position: relative;" class="chk_login">
+                        <a href="login.html">로그인</a>
+                    </li>
+                    <li style="position: relative;" class="chk_login">                        
+                        <a href="write.html"><img src="/img/login.png"></a>
+                        <a href="home.html" onclick="deleteCookie('uInfo')">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gnb_nav">
+            <ul class="gnb_nav_ea10">
+                <li><a href="main.html">냉장고</a></li>
+                <li><a href="home.html">분류</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container_etc" style="width:500px;">
+        <h2>로그인</h2>
+        <div class="panel-body">
+            <div class="join_btn2_k">
+                <button type="submit" onclick="loginWithKakao()" class="btn"><span class="kakao">카카오 로그인</span></button>
+                <button class="btn_naver" onclick="loginWithNaver()" type="submit" class="btn"><span class="span_naver">네이버 로그인</span></button>
+                <div id="naverIdLogin" style="display: none;"></div>
+            </div>
+            <div class="form_login_in" style="padding-right:22px;">
+                <input type="text" name="id_user" class="" id="id_user" placeholder="아이디">
+                <span id="idMsg" style="display:none; color:#FF0000;">아이디를 입력해주세요.</span>
+            </div>
+            <div class="form_login_in">
+                <input type="password" name="tx_passwd" class="" id="tx_passwd" placeholder="비밀번호">
+                <span id="pwMsg" style="display:none;color:#FF0000;">비밀번호를 입력해주세요.</span>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="login_perma" value="1"><span class="guide_txt">아이디 저장</span>
+                </label>
+            </div>
+            <div class="form_login_btn">
+                <span>
+                    <a href="javascript:;" id="login">로그인</a>
+                    <a href="join.html">회원가입</a>
+                </span>
+            </div>
+            <div class="join_btn3">
+                <a href="javascrip:;">아이디 찾기</a>
+                <a href="javascrip:;">비밀번호 찾기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

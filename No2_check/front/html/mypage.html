@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/mypage.css" />
+    <script src="/js/common.js"></script>
+    <script src="/js/mypage.js"></script>
+</head>
+<body style="background: rgb(255, 255, 255);">
+    <div class="gnb" style="position: relative">
+        <div class="gnb_top_wrap">
+            <div class="gnb_top">
+                <h1>
+                    <a href="home.html"><img src="../img/logo.png" alt="로고" style="width: 50px;height: 50px;"></a>
+                </h1>
+                <div class="gnb_search">
+                    <div class="input-group">
+                        <input id="srhRecipeText" name="q" type="text" class="form-control ui-autocomplete-input" placeholder="" value="" style="ime-mode:active;" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="searchHome()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <ul class="gnb_right">
+                    <li style="position: relative;" class="chk_login">
+                        <a href="login.html">로그인</a>
+                    </li>
+                    <li style="position: relative;" class="chk_login">                        
+                        <a href="write.html"><img src="/img/login.png"></a>
+                        <a href="home.html" onclick="deleteCookie('uInfo')">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gnb_nav">
+            <ul class="gnb_nav_ea10">
+                <li><a href="main.html">냉장고</a></li>
+                <li><a href="home.html">분류</a></li>
+                <li><a class="active" href="mypage.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container_etc" style="width:80%;">
+        <div style="margin-bottom: 50px;">
+            <h2 id="user_name"></h2>
+            <div is_over="0" class="profile">
+                <img class="profile_img" src="/img/profile.png" alt="profile" class="file-upload-image" style="cursor:pointer;">
+                <input class="camera_img" type="image" src="/img/profile_camera.png">
+                <input type="file" name="file" class="file-upload-input" onchange="insertFile(this)">
+            </div>
+        </div>
+        <div>
+            <div class="scrap" style="border-top: 1px solid #e6e7e8;" id="scrapArea">
+                                
+            </div>
+            <div class="scrap" id="recipeArea">
+
+            </div>
+        </div>
+        <div class="login_btn">
+            <a href="javascript:;" onclick="updateUser()">회원정보 수정하기</a>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분류</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/home.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="/js/common.js"></script>
+    <script src="/js/home.js"></script>
+</head>
+<body>    
+    <div class="gnb" style="position: relative">
+        <div class="gnb_top_wrap">
+            <div class="gnb_top">
+                <h1>
+                    <a href="home.html"><img src="../img/logo.png" alt="로고" style="width: 50px;height: 50px;"></a>
+                </h1>
+                <div class="gnb_search">
+                    <div class="input-group">
+                        <input id="srhRecipeText" name="q" type="text" class="form-control ui-autocomplete-input" placeholder="" value="" style="ime-mode:active;" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="searchHome()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <ul class="gnb_right">
+                    <li style="position: relative;" class="chk_login">
+                        <a href="login.html">로그인</a>
+                    </li>
+                    <li style="position: relative;" class="chk_login">                        
+                        <a href="write.html"><img src="/img/login.png"></a>
+                        <a href="home.html" onclick="deleteCookie('uInfo')">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gnb_nav">
+            <ul class="gnb_nav_ea10">
+                <li><a href="main.html">냉장고</a></li>
+                <li><a href="home.html" class="active">분류</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+    <dl class="container">
+        <dd id="contents_area_full" style="clear:both;">
+            <div id="id_search_category" class="rcp_m_cate">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <colgroup>
+                        <col width="100px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="cate" style="padding-top: 10px;">
+                                <span>종류별</span>
+                                <span>상황별</span>
+                                <span>재료별</span>
+                                <span>방법별</span>
+                            </td>
+                            <td>
+                                <div class="rcp_cate st3">
+                                    <div class="cate_list" id="cate1">
+                                        <a href="javascript:;" class="active">전체</a><a
+                                            href="javascript:;">밥</a><a
+                                            href="javascript:;">국/탕</a><a
+                                            href="javascript:;">찌개</a><a
+                                            href="javascript:;">반찬</a><a
+                                            href="javascript:;">후식</a><a
+                                            href="javascript:;">면</a><a
+                                            href="javascript:;">죽/떡</a><a
+                                            href="javascript:;">빵/과자</a><a
+                                            href="javascript:;">양식</a><a
+                                            href="javascript:;">기타</a>
+                                    </div>
+                                    <div class="cate_list" id="cate2">
+                                        <a href="javascript:;" class="active">전체</a><a
+                                            href="javascript:;">일상</a><a
+                                            href="javascript:;">초스피드</a><a
+                                            href="javascript:;">손님접대</a><a
+                                            href="javascript:;">다이어트</a><a
+                                            href="javascript:;">술안주</a><a
+                                            href="javascript:;">도시락</a><a
+                                            href="javascript:;">해장</a><a
+                                            href="javascript:;">영양식</a><a
+                                            href="javascript:;">간식</a><a
+                                            href="javascript:;">야식</a><a
+                                            href="javascript:;">기타</a>
+                                    </div>
+                                    <div class="cate_list" id="cate3">
+                                        <a href="javascript:;" class="active">전체</a><a
+                                            href="javascript:;">소고기</a><a
+                                            href="javascript:;">돼지고기</a><a
+                                            href="javascript:;">닭고기</a><a
+                                            href="javascript:;">육류</a><a
+                                            href="javascript:;">채소류</a><a
+                                            href="javascript:;">해물류</a><a
+                                            href="javascript:;">달걀/유제품</a><a
+                                            href="javascript:;">기타</a>
+                                    </div>
+                                    <div class="cate_list" id="cate4">
+                                        <a href="javascript:;" class="active">전체</a><a
+                                            href="javascript:;">볶음</a><a
+                                            href="javascript:;">끓이기</a><a
+                                            href="javascript:;">부침</a><a
+                                            href="javascript:;">조림</a><a
+                                            href="javascript:;">무침</a><a
+                                            href="javascript:;">비빔</a><a
+                                            href="javascript:;">찜</a><a
+                                            href="javascript:;">튀김</a><a
+                                            href="javascript:;">굽기</a><a
+                                            href="javascript:;">삶기</a><a
+                                            href="javascript:;">기타</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>                
+                </table>
+            </div>
+            <ul class="rcp_m_list2">
+                <div class="m_list_tit">
+                    <b>검색 결과</b>
+                    <ul class="nav nav-tabs2 pull-right" style="position:relative;" id="sort_option">
+                      <li role="presentation" class="active"><a href="javascript:;">정확순</a></li>
+                      <li role="presentation"><a href="javascript:;">최신순</a></li>
+                      <li role="presentation"><a href="javascript:;">추천순</a></li>
+                    </ul>
+                </div>
+        
+                <ul class="common_sp_list_ul ea4" style="padding:0 0 0 8px;" id="ListArea">
+                    <li class="common_sp_list_li">
+                        <div class="common_sp_thumb">
+                            <a href="detail.html?recipe=#RECIPE_IDX" class="common_sp_link">
+                                <img src="#IMAGE">
+                            </a>
+                        </div>
+                        <div class="common_sp_caption">
+                            <div class="common_sp_caption_tit line2">#TITLE</div>
+                            <div class="common_sp_caption_rv_name" style="display: inline-block; vertical-align: bottom;">
+                                <img src="../img/profile.png">#WRITER
+                            </div>
+                            <div class="common_sp_caption_rv">
+                                <span class="common_sp_caption_rv_star">
+                                    #STAR
+                                </span>
+                                <span class="common_sp_caption_rv_ea">(#SCORE)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </ul>
+        </dd>
+    </dl>
+</body>
+
+</html>
