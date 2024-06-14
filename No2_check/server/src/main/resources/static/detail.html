@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/detail.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+    <script src="/js/common.js"></script>
+    <script src="/js/detail.js"></script>
+</head>
+
+<body>
+    <div class="gnb" style="position: relative">
+        <div class="gnb_top_wrap">
+            <div class="gnb_top">
+                <h1>
+                    <a href="home.html"><img src="../img/logo.png" alt="로고" style="width: 50px;height: 50px;"></a>
+                </h1>
+                <div class="gnb_search">
+                    <div class="input-group">
+                        <input id="srhRecipeText" name="q" type="text" class="form-control ui-autocomplete-input" placeholder="" value="" style="ime-mode:active;" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="searchHome()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <ul class="gnb_right">
+                    <li style="position: relative;" class="chk_login">
+                        <a href="login.html">로그인</a>
+                    </li>
+                    <li style="position: relative;" class="chk_login">                        
+                        <a href="write.html"><img src="/img/login.png"></a>
+                        <a href="home.html" onclick="deleteCookie('uInfo')">로그아웃</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gnb_nav">
+            <ul class="gnb_nav_ea10">
+                <li><a href="main.html">냉장고</a></li>
+                <li><a href="home.html" class="active">분류</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div id="contents_area_full" style="clear:both;">
+            <div class="view2_pic" style="position: relative;">
+                <div class="centeredcrop">
+                    <img id="main_thumbs" src="" alt="main thumb">
+                </div>
+                <div class="view_cate_pdt">
+                    <img src="../img/noscrap.png" alt="noscrap" style="z-index: 10;" id="scrap_img" onclick="scrapRecipe()">
+                </div>
+                <div class="user_info2">
+                    <img class="app_block_link_remove user_info2_pic" id="main_profile" src="">
+                    <span class="user_info2_name" id="main_name"></span>
+                </div>
+            </div>
+
+            <div class="view2_summary st3">
+                <h3 id="main_title"></h3>
+                <div class="view2_summary_in" id="recipeIntro">
+                </div>
+                <div class="view2_summary_info">
+                    <span class="view2_summary_info1" id="main_userCount"></span> <span class="view2_summary_info2" id="main_time"></span> <span
+                        class="view2_summary_info3" id="main_level"></span>
+                </div>
+                <div class="modal-body">
+                    <div class="btn_list">
+                        <div class="cont_ingre2">
+                            <div class="best_tit">
+                                <b>재료</b>
+                            </div>
+                            <div class="ready_ingre3">
+                                <ul id="ingredient_area">
+                                    <b class="ready_ingre3_tt">[재료]</b>
+                                    
+                                </ul>
+                                <ul id="seasoning_area">
+                                    <b class="ready_ingre3_tt">[양념장]</b>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blank_bottom"></div>
+            <div class="modal-body">
+                <div class="btn_list">
+                    <div class="cont_ingre2" id="step_area">
+                        <div class="best_tit">
+                            <b>조리순서</b><span>Steps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blank_bottom"></div>
+            <div class="view_reply st2">
+                <div class="reply_tit">댓글</div>
+                <div id="contents_area" style="padding-bottom: 20px;">
+                </div>
+                <span class="reply_list_star">
+                    <input type="image" src="/img/empty_star.png" onclick="changeStar(this)">
+                    <input type="image" src="/img/empty_star.png" onclick="changeStar(this)">
+                    <input type="image" src="/img/empty_star.png" onclick="changeStar(this)">
+                    <input type="image" src="/img/empty_star.png" onclick="changeStar(this)">
+                    <input type="image" src="/img/empty_star.png" onclick="changeStar(this)">
+                </span>
+
+                <div class="input-group" style="width: 100%; display: flex; justify-content: space-between;">
+                    <textarea id="cmt_tx_content1" class="form-control" placeholder="레시피가 도움이 되셨나요?" style="height:100px; width:calc(100% - 110px); resize:none;"></textarea>
+                    <span class="input-group-btn" style="width: 100px;">
+                        <button class="btn btn-default" type="button" onclick="insertComment()" style="height:100px; width:100px;">등록</button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
