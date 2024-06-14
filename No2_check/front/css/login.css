@@ -87,8 +87,29 @@ margin-bottom:-1px !important;
 .form_login_in {display:table-cell; width: 1%;}
 .form_login_in input {border: none; border-bottom:1px solid #ccc; font-size: 18px; padding: 10px 2px; width: 100%; outline-style:none;}
 
-.form_join_in {display:block; align-items: center;}
-.form_join_in input {border: none; border-bottom:1px solid #ccc; font-size: 18px; padding: 10px 2px; width: 100%; outline-style:none;}
+.inputs-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.inputs-wrapper input[type="password"], .inputs-wrapper input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    padding: 10px 2px;
+    width: calc(100% - 22px);
+    outline-style: none;
+}
+.inputs-wrapper input[type="image"] {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 2px;
+}
+.form_join_in span {
+    margin-top: 10px;
+    font-size: 14px;
+}
 
 .form_login_btn {width: 100%; text-align: center; margin:30px 0;}
 .form_login_btn a {background: #fff; color: #333; font-size:20px; border: 1px solid rgba(0, 0, 0, 0.14); padding:10px 60px 11px; border-radius: 28px; outline-style:none; -webkit-box-shadow:0 2px 3px rgba(0, 0, 0, 0.08); box-shadow:0 2px 3px rgba(0, 0, 0, 0.08);}

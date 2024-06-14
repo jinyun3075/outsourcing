@@ -106,15 +106,28 @@ function showList(){
                     useinde.push(d.split('^')[0])
                 }
             })
-            
+            return {
+                TITLE: p.title
+                ,SELIND: useinde.length
+                ,RECIPEID: p.recipe_id
+                ,SELITEM: useinde.join(', ')
+                ,ALLIND: inde.length
+                ,DONIND: doninde.join(', ')
+                ,IMG: scrapList.indexOf(p.recipe_id) > -1? 'scrap':'noscrap'
+            }
+        }).sort((a,b)=>{
+            return b.SELIND - a.SELIND;
+        }).map(p=>{
             area.insertAdjacentHTML('beforeend',layout2
-                .replace('#TITLE',p.title)
-                .replace('#SELIND',useinde.length)
-                .replace('#RECIPEID',p.recipe_id)
-                .replace('#SELITEM',useinde.join(', '))
-                .replace('#ALLIND',inde.length)
-                .replace('#DONIND',doninde.join(', '))
-                .replace('#IMG', scrapList.indexOf(p.recipe_id) > -1? 'scrap':'noscrap'))
+                .replace('#TITLE',p.TITLE)
+                .replace('#SELIND',p.SELIND)
+                .replace('#RECIPEID',p.RECIPEID)
+                .replace('#SELITEM',p.SELITEM)
+                .replace('#ALLIND',p.ALLIND)
+                .replace('#DONIND',p.DONIND)
+                .replace('#IMG', p.IMG)
+            )
         })
+
 
 }

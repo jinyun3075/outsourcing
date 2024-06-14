@@ -59,6 +59,7 @@ function init(){
         const user_nm = getElement('tx_nick');
         const user_pw = getElement('tx_passwd');
         const temp_pw = getElement('tx_passwdChk')
+        const pwCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
         if(check_id == '' && check_pw == '' && check_ni == '' & check_em == ''){
             alert('필수 값을 전부 입력해주세요.')
@@ -76,6 +77,8 @@ function init(){
         else if(user_pw != temp_pw){
             alert('확인 비밀번호와 다릅니다.')
             return;
+        }else if(!pwCheck.test(user_pw)){
+            alert('비밀 번호 조건을 맞춰 주세요.')
         }
         
         data = {
@@ -126,7 +129,6 @@ function checkInput(target_id, msg_id, regex){
 
 function check_dupli(query_id, regex, strCheck){
     strCheck += document.querySelector(`#${query_id}`).value
-    console.log(strCheck.split('^'))
     const result = regex.test(strCheck.split('^')[1]);
     if(!result){
         alert('조건을 맞춰주세요.')

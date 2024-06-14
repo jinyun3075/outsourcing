@@ -99,14 +99,28 @@ function addOption(taget_id){
                 .replace('#OPTION2',''));
 }
 function addOption2(taget_id){
+    let num = document.querySelectorAll(`#${taget_id} .ui-sortable`).length;
     document.querySelector(`#${taget_id}`).insertAdjacentHTML('beforeend',layout2
-                .replace('#NUM',leyout2Num++)
+                .replace('#NUM',num+1)
                 .replace('#CONTENT','')
                 .replace('#IMAGE','/img/step_plus.gif')
             );
 }
 function deleteOption(taget_id){
     let e = document.querySelector(`#${taget_id}`);
+    let num =0;
+    if(taget_id == 'divStepArea'){
+        num = document.querySelectorAll(`#${taget_id} .ui-sortable`).length
+        if(num < 2) {
+            return
+        }
+    }else{
+        num = document.querySelectorAll(`#${taget_id} .pad_b_25`).length
+        if(num < 3) {
+            return
+        }
+    }
+
     e.removeChild(e.lastElementChild);
 }
 function insertFile(e){

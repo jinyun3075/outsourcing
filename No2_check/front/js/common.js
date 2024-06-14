@@ -1,5 +1,5 @@
-const URL = 'http://58.141.78.122:3306'
-const URL2 = 'http://localhost'
+const URL2 = 'http://58.141.78.122:3306'
+const URL = 'http://localhost'
 const IMGURL = `${URL}/upload?fileName=`
 const urlParams = new URLSearchParams(location.search);
 

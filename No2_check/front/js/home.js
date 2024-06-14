@@ -108,8 +108,9 @@ function binding(){
                     .replace('#TITLE',p.title)
                     .replace('#WRITER',p.writer)
                     .replace('#SCORE',p.score)
-                    .replace('#IMAGE',IMGURL+p.image)
+                    .replace('#IMAGE',p.image ? IMGURL+p.image : '/img/logo.png')
                     .replace('#STAR',star)
+                    .replace('#PROFILEIMAGE', p.writerImg? IMGURL + p.writerImg : '/img/profile.png')
         })
 
 }
