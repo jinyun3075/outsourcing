@@ -127,14 +127,12 @@ public class RecipeServiceIMPL extends ServiceExceptionCheck implements RecipeSe
             throw new Exception("만든이가 아닙니다.");
         }
 
+        List<RecipeSort> recipeSorts = new ArrayList<RecipeSort>();
+        List<RecipeSort> sort = recipeSortRepository.findByRecipeIdx(recipe.get().getIdx());
+        recipeSortRepository.deleteAll(sort);
+        recipeSortRepository.saveAll(dto.getRecipe_sort().stream().map(p->dtoToEntity(p, recipe.get())).toList());
         updateRecipeEntity(recipe.get(), dto);
-        List<RecipeSort> recipeSorts = recipeSortRepository.findByRecipeIdx(recipe.get().getIdx());
-        for(int i = 0 ; i < recipeSorts.size(); i++){
-            updateRecipeSortEntity(recipeSorts.get(i),dto.getRecipe_sort().get(i));
-        }
-
-        recipeRepository.save(recipe.get());
-        recipeSortRepository.saveAll(recipeSorts);
+        
 
         return entityToDto(recipe.get(), recipeSorts);
     }

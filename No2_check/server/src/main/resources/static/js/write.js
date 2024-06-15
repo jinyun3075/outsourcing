@@ -77,7 +77,7 @@ function init() {
                         .replace('#NUM',p.step)
                         .replace('#CONTENT',p.content)
                         .replace('#IMAGE', p.image ? IMGURL + p.image :'/img/step_plus.gif')
-                        .replace('#IMAGEVALUE', p.image || ''))
+                        .replace('#IMAGEVALUE', p.image ? p.image: ''))
             })
 
         })
@@ -104,6 +104,7 @@ function addOption2(taget_id){
                 .replace('#NUM',num+1)
                 .replace('#CONTENT','')
                 .replace('#IMAGE','/img/step_plus.gif')
+                .replace('#IMAGEVALUE','')
             );
 }
 function deleteOption(taget_id){
@@ -181,6 +182,7 @@ function insertRecipe(type){
     })
 
     document.querySelectorAll('#divStepArea [name="file"]').forEach((data, idx)=> {
+        console.log(data.getAttribute('data-value'));
         recipe_sort[idx].image = data.getAttribute('data-value');
     })
 
