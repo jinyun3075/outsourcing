@@ -118,3 +118,5 @@ div.gnb_search .form-control {border:1px solid #ccc; background:#fbfbfb; height:
 .view_step_cont .media-right img {margin:0; border-radius:10px; max-width:300px; height:auto; margin:20px 0 10px;}
 
 .view2_summary.st3 .view2_summary_in {position:relative; padding:2px 10px 10px 10px; color:#aaa; font-size:16px; line-height:170%; font-style: normal; margin: 0; width: 100%;}
+
+#main_thumbs {width: 30%;}

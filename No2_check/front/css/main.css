@@ -69,7 +69,7 @@ div.gnb_search .form-control {border:1px solid #ccc; background:#fbfbfb; height:
 .panel-body span p {margin: 0;}
 
 .txt {display: flex; justify-content: space-between; align-items: center;}
-.reci{display: flex; justify-content: left;}
+.reci{display: flex; justify-content: flex-start; gap: 20px;}
 
 
 
