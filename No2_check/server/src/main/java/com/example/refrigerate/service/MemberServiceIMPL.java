@@ -20,7 +20,11 @@ public class MemberServiceIMPL extends ServiceExceptionCheck implements MemberSe
     @Override
     public MemberDTO insertUser(MemberDTO dto) throws Exception{
         Optional<Member> entity = memberRepository.findByUserid(dto.getUser_id());
-        if(entity.isPresent()){
+        
+        if(dto.getUser_id().equals(dto.getUser_nm()) ){
+            Member res = memberRepository.save(dtoToEntity(dto));
+            return entityToDto(res);
+        }else if(entity.isPresent()){
             return entityToDto(entity.get());
 
         }else {

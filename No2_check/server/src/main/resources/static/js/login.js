@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
     init();
-    snsInit();
 });
 
 function init(){
@@ -20,31 +19,11 @@ function init(){
     })
 }
 
-function snsInit(){
-    // SNS로그인 인증키 입력란
-    Kakao.init('인증 키');
-
-    const naverLogin = new naver.LoginWithNaverId(
-        {
-            clientId: "애플리케이션 ClientID",
-            callbackUrl: "콜백 URL",
-            loginButton: {color: "green", type: 1, height: 0}
-        }
-    );
-    naverLogin.init(); // 로그인 설정
-
-    naverLogin.getLoginStatus(function (status) {
-        if (status) {
-            naverSet();
-        }
-    });
-}
-
-function naverSet(){
+async function naverSet(){
     let user_id = naverLogin.user.email
     let user_email = naverLogin.user.email
     let user_pw = 'Qwer!234';
-    let user_nm = naverLogin.user.nickname
+    let user_nm = naverLogin.user.email
     let image = naverLogin.user.profile_image;
 
     data = {
@@ -53,6 +32,18 @@ function naverSet(){
         ,user_pw
         ,user_nm
         ,image
+    }
+    try{
+        await axios.post(`${URL}/user`, data)
+                    .then(res => {
+                        return res.data;
+                    })
+                    .then(data => {
+                    })
+                    .catch(error => {
+                    });
+    }catch(err) {
+        
     }
     login(data);
 
@@ -63,37 +54,37 @@ function loginWithNaver(){
 }
 
 function loginWithKakao() {
-    if(Kakao.isInitialized()){
-        Kakao.Auth.login({
-            success: (authObj) =>{
-                console.log(authObj); // access토큰 값
-                Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
-                getInfo();
-            },
-            fail: (err) => {
-                console.log(err);
-            }
-        });
-    }
+    const clientId = 'f6db99ba47e0f0204ef39eab10f3dd72';
+    const redirectUri = 'http://localhost:5500/html/login.html';
+    const kakaoLoginUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&prompt=login`;
+    location.href = kakaoLoginUrl;   
 }
 
-function getInfo() {
+function getUserInfo() {
     Kakao.API.request({
         url: '/v2/user/me',
-        success: (res) => {
-            let user_id = res.kakao_account.email;
-            let user_email = res.kakao_account.email;
-            let user_pw = 'Qwer!234';
-            let user_nm = res.kakao_account.profile.nickname;
-            let image = res.kakao_account.profile.thumbnail_image_url;
+        success: async (res) => {
+            let user_id = res.id;
+            let user_email = res.id;
+            let user_pw = res.id;
+            let user_nm = res.id;
+            let image = res.id;
 
             data = {
                 user_id
                 ,user_email
                 ,user_pw
                 ,user_nm
-                ,image
+                ,image:''
             }
+            await axios.post(`${URL}/user`, data)
+                .then(res => {
+                    return res.data;
+                })
+                .then(data => {
+                })
+                .catch(error => {
+                });
             login(data);
         },
         fail: function (error) {
@@ -113,7 +104,9 @@ function login(data){
                 let cookieString = `uInfo=${JSON.stringify(data)}; expires=${expiresDate.toUTCString()}; path=/`
                 document.cookie = cookieString;
                 alert('로그인 성공');
+            
                 location.href = 'home.html';
+                
             })
             .catch(error => {
                 if (error.response) {
