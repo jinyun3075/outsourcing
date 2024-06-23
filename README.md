@@ -16,28 +16,30 @@
 ## <span id="tree">3. 프로젝트 구조</span>
 
 <details>
-src
-└─main
-  ├─java
-  │  └─com
-  │      └─example
-  │          └─refrigerate
-  │              ├─common
-  │              ├─controller
-  │              ├─domain
-  │              │  └─Member
-  │              │      ├─dto
-  │              │      ├─entity
-  │              │      └─repository
-  │              ├─service
-  │              │  └─construct
-  │              └─util
-  │                  └─exception
-  └─resources
-      └─static
-         ├─css
-         ├─img
-         └─js
-└─upload
+  
+```bash
+\---src
+    └─main
+      ├─java
+      │  └─com
+      │      └─example
+      │          └─refrigerate
+      │              ├─common
+      │              ├─controller
+      │              ├─domain
+      │              │  └─Member
+      │              │      ├─dto
+      │              │      ├─entity
+      │              │      └─repository
+      │              ├─service
+      │              │  └─construct
+      │              └─util
+      │                  └─exception
+      └─resources
+          └─static
+             ├─css
+             ├─img
+             └─js
+    └─upload
 ```
 </details>
