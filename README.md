@@ -13,7 +13,11 @@
 - Front : HTML, CSS, JS, BootStrap
 - Back : Spring Framwork, My SQL
 
-## <span id="tree">3. 프로젝트 구조</span>
+## <span id="tree">3. ERD</span>
+
+![냉장고를 부탁해ERD](https://github.com/jinyun3075/outsourcing/assets/64072136/4f1f5f17-0bf9-43d5-b3dd-e195aec5f252)
+
+## <span id="tree">4. 프로젝트 구조</span>
 
 <details>
   
