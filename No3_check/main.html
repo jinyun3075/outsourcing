@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promade</title>
+    <link rel="stylesheet" href="main.css"></link>
+</head>
+<body>
+    <div class="body">
+        <div class="content">
+            <div class="content-header">
+                <input type="text" value="프로메이드 데크타일 수량 계산기" disabled>
+                <div>데크타일 종류별 면적에 따른 필요 수량을 계산해 드립니다.</div>
+            </div>
+            <div class="content-body">
+                <div class="section">
+                    <div class="question">
+                        <img src="/check.png">어떤 데크스타일로 계산해 드릴까요?
+                    </div>
+                    <div class="menu">
+                        <a class="tile-button" data-tile="30" href="javascript:;">우디/스토니/샌디/베니<br>한 변 30cm</a>
+                        <a class="tile-button" data-tile="15" href="javascript:;">스타코<br>한 변 15cm</a>
+                    </div>
+                </div>
+                <div class="section question-2" style="display: none;">
+                    <div class="question">
+                        <img src="/check.png">데크타일을 설치하실 공간의 면적을 기입해 주세요.
+                    </div>
+                    <div class="size">
+                        <input type="text" placeholder="가로" id="width">X
+                        <input type="text" placeholder="세로" id="height">
+                        (cm)
+                        <div class="result-btn">
+                            <a class="click" href="javascript:;" style="display: none;">결과 확인</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-footer" style="display: none;">
+                <div class="result" id="result-text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
