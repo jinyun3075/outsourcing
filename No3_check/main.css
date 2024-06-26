@@ -25,7 +25,7 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url('/background.jpg');
+    background-image: url('./background.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
