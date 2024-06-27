@@ -10,8 +10,8 @@
     <div class="body">
         <div class="content">
             <div class="content-header">
-                <input type="text" value="프로메이드 데크타일 수량 계산기" disabled>
-                <div>데크타일 종류별 면적에 따른 필요 수량을 계산해 드립니다.</div>
+                <p class="main_title">프로메이드 데크타일 수량 계산기</p>
+                <strong>데크타일 종류별 면적에 따른 필요 수량을 계산해 드립니다.</strong>
             </div>
             <div class="content-body">
                 <div class="section">
@@ -19,8 +19,8 @@
                         <img src="./check.png">어떤 데크스타일로 계산해 드릴까요?
                     </div>
                     <div class="menu">
-                        <a class="tile-button" data-tile="30" href="javascript:;">우디/스토니/샌디/베니<br>한 변 30cm</a>
-                        <a class="tile-button" data-tile="15" href="javascript:;">스타코<br>한 변 15cm</a>
+                        <a class="tile-button" data-tile="30" data-content="우디/스토니/샌디/베니" href="javascript:;">우디/스토니/샌디/베니<br>한 변 30cm</a>
+                        <a class="tile-button" data-tile="15" data-content="스타코" href="javascript:;">스타코<br>한 변 15cm</a>
                     </div>
                 </div>
                 <div class="section question-2" style="display: none;">
@@ -38,10 +38,15 @@
                 </div>
             </div>
             <div class="content-footer" style="display: none;">
-                <div class="result" id="result-text">
-                </div>
+                <div class="result" id="result-text"></div>
             </div>
-        </div>
+            <div class="footer">
+                자세한 계산법은 상세페이지를 참고해 주시기 바랍니다.
+                계산된 타일 수량은 타일을 절단하여 최대한 바닥의 남는 부분 없이 설치할 경우를 가정하여 안내 드리는 수치로 약간의 여유가 있는 수치입니다.
+                수량이 애매하실 경우 무료배송 상품이니 일부 먼저 구입하셔서 설치해 보신 후 남은 공간에 맞춰 추가구매 하시는 방법도 추천 드립니다.
+            </div>
+        </div>        
+        
     </div>
     <script src="main.js"></script>
 </body>

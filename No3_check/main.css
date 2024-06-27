@@ -1,6 +1,14 @@
+/* 
+사용 color
+#728EA6
+#8D99A5
+#E2DEDB
+#D9D3C7
+#8C0E03 */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 }
 
 .body {
@@ -8,7 +16,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: rgb(255, 249, 229);
+    background-color: #E2DEDB;
 }
 
 .body .content {
@@ -25,12 +33,21 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url('./background.jpg');
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%),
+                        url('./background.jpg') no-repeat center top;
     background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
     height: 200px;
     justify-content: center;
+}
+
+.content-header .main_title{
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 333px;
+    background-color:white;
 }
 
 .content-header input {
@@ -43,7 +60,7 @@ body {
     background-color: white;
 }
 
-.content-header div {
+.content-header strong {
     font-size: 15px;
     color: #666;
     margin-bottom: 10px;
@@ -53,7 +70,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 3%;
     text-align: center;
     margin-top: 10px;
 }
@@ -84,10 +101,28 @@ body {
     justify-content: center;
 }
 
-.menu a , .result-btn a{
+.menu a{
+    display: inline-block;
+    padding: 15px 0px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #D9D3C7;
+    min-width: 60%
+}
+/* #728EA6
+#8D99A5
+#E2DEDB
+#D9D3C7
+#8C0E03 */
+
+.result-btn a{
     display: inline-block;
     padding: 10px 35px;
-    margin: 10px;
+    margin: 20px 0;
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -96,8 +131,12 @@ body {
     background-color: white;
 }
 
-.menu .click, .result-btn .click{
-    background-color: #8bca8b;
+.menu .click{
+    background-color: #728EA6;
+}
+
+.result-btn .click{
+    background-color: #8D99A5;
 }
 
 .size input{
@@ -113,10 +152,6 @@ body {
     margin-right: 5px;
 }
 
-.section .result{
-    width: 100%;
-    background-color: #8bca8b;
-}
 
 .content-footer{
     display: flex;
@@ -125,5 +160,17 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 10px;
-    background-color: #8bca8b;
+    background-color: #728EA6;
+}
+
+.footer {
+    padding: 5%;
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    position: relative;
+    bottom: 0;
+    width: 80%;
+    margin: 0 auto;
 }

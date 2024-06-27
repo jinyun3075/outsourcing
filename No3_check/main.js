@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     resultButton.addEventListener("click", function() {
         const tileButton = document.querySelector(".tile-button.click");
-        const width = (widthInput.value / tileButton.dataset.tile).toFixed(1);
-        const height = (heightInput.value / tileButton.dataset.tile).toFixed(1);
-        
+        const width = (Math.floor((widthInput.value / tileButton.dataset.tile) * 10) / 10).toFixed(1)
+        const height = (Math.floor((heightInput.value / tileButton.dataset.tile) * 10) / 10).toFixed(1);
         let res_width = 0;
         let res_height = 0;
 
@@ -47,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function() {
             res_height = Math.ceil(height);
         } else {
             res_height = Math.floor(height);
-        }
+        }        
         
         // 위 면적에 필요한 <br><b>스토니 </b>데크타일은 <br>총 <b>40P </b>입니다.
-        resultText.innerHTML = `위 면적에 필요한 <br><b>${tileButton.innerText} </b>데크타일은 <br>총 <b>${res_width*res_height}P</b> 입니다.`;
+        resultText.innerHTML = `위 면적에 필요한 <br><b style="color:#8C0E03">${tileButton.dataset.content} </b>데크타일은 <br>총 <b style="color:#8C0E03">${res_width*res_height}P</b> 입니다.`;
         
         // 결과 섹션 보이기
         resultSection.style.display = "block";
