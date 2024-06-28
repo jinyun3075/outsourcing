@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: #E2DEDB;
+    background-color: white;
 }
 
 .body .content {
@@ -48,6 +48,7 @@ body {
     border-radius: 5px;
     width: 333px;
     background-color:white;
+    opacity: 0.5;
 }
 
 .content-header input {
@@ -110,7 +111,7 @@ body {
     color: #333;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #D9D3C7;
+    background-color: #F6E6CB;
     min-width: 60%
 }
 /* #728EA6
@@ -132,11 +133,11 @@ body {
 }
 
 .menu .click{
-    background-color: #728EA6;
+    background-color: #E7D4B5;
 }
 
 .result-btn .click{
-    background-color: #8D99A5;
+    background-color: #E7D4B5;
 }
 
 .size input{
@@ -160,7 +161,7 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 10px;
-    background-color: #728EA6;
+    background-color: #B6C7AA;
 }
 
 .footer {
