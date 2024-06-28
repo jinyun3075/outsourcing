@@ -37,6 +37,7 @@ body {
                         url('./background.jpg') no-repeat center top;
     background-size: cover;
     height: 200px;
+    font-weight: bold;
     justify-content: center;
 }
 
@@ -112,7 +113,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #F6E6CB;
-    min-width: 60%
+    min-width: 60%;
 }
 /* #728EA6
 #8D99A5

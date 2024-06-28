@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }        
         
         // 위 면적에 필요한 <br><b>스토니 </b>데크타일은 <br>총 <b>40P </b>입니다.
-        resultText.innerHTML = `위 면적에 필요한 <br><b style="color:#A0937D">${tileButton.dataset.content} </b>데크타일은 <br>총 <b style="color:#A0937D">${res_width*res_height}P</b> 입니다.`;
+        resultText.innerHTML = `위 면적에 필요한 <br><b style="color:#8C7F69">${tileButton.dataset.content} </b>데크타일은 <br>총 <b style="color:#8C7F69">${res_width*res_height}P</b> 입니다.`;
         
         // 결과 섹션 보이기
         resultSection.style.display = "block";
